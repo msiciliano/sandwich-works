@@ -1,0 +1,21 @@
+/*
+
+Custom CSS file for sandwich-works.com
+
+*/
+
+.container-fluid {
+  margin-right:		auto;
+  margin-left:		auto;
+  max-width: 		1200px;
+  background-color: 	#FFFAEA;
+  color:    		#3C3A32;
+}
+
+.hero-unit {
+	  /* background-color: red;*/
+}
+
+footer {
+  margin:		20px;
+}

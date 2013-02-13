@@ -1,0 +1,74 @@
+/*
+    Custom CSS file for sandwich-works.com
+    Base Colors: BCB39A 694B2D
+    
+    Author: Michael Siciliano
+    Email:  cafed00d.2321@gmail.com
+    
+*/
+
+.container-fluid {
+  /* 
+      This is meant to have the look and 
+      feel of a menu, so we do not want it to 
+      be completely responsive.  
+  */
+  max-width:          1200px;
+  margin-right:       auto;
+  margin-left:        auto;
+  color:              #896475;
+}
+
+/* HERO UNIT */
+.hero-unit {
+  background-color:   #454E6F;  /*#FFFCEE   #FFFAEA; #6C566F */
+  color:              #FFFAEA;
+  padding-bottom:     15px;
+}
+
+#hero-quote {
+  margin-top:         30px;
+  font-family:        'Rock Salt', cursive;
+}
+
+/* MENUS */
+.menu { 
+  margin:             0px 5px 15px 0px;
+  padding:            10px 20px 20px 20px;
+  background-color:   #C9B89D;  /*#FFFCEE   #FFFAEA; */
+  color:              #FFFCEE;
+}
+
+.menu h1 {
+  color:              #454E6F;
+  font-family:        'Trade Winds', Times, Serif;
+}
+
+.menu-item, .price {
+  color:              #6C566F;
+  font-family:        'Stoke', Times, Serif;
+}
+
+/* SIDEBARS */
+.sidebar {  
+  padding:            5px;
+  color:              #763C2D;
+ 
+}
+
+.sidebar h1 {  
+  font-family:        'Noticia', Times, Serif;
+ 
+}
+
+.sidebar h4 {
+  font-family:        'Kameron', Times, Serif;
+}
+
+
+
+footer {
+  margin:             20px;
+}
+
+
