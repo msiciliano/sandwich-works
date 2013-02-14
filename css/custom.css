@@ -57,15 +57,19 @@
 }
 
 .sidebar h1 {  
-  font-family:        'Noticia', Times, Serif;
+  font-family:        'Noticia Text', Times, Serif;
  
 }
 
 .sidebar h4 {
   font-family:        'Kameron', Times, Serif;
 }
-
-
+ 
+ 
+#carousel-caption {
+  color:              #454E6F;
+  font-family:        'Rock Salt', cursive;
+}
 
 footer {
   margin:             20px;
