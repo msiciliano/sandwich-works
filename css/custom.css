@@ -67,8 +67,18 @@
  
  
 #carousel-caption {
+  padding:            10px;
   color:              #454E6F;
   font-family:        'Rock Salt', cursive;
+}
+
+
+#contact {
+  margin:             20px 20px 0px 20px;
+}
+
+#contact h1, #contact h2, #contact h4, #contact>p {
+  padding:             40px 0px 0pc 0px;
 }
 
 footer {
