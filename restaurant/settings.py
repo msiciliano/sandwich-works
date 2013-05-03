@@ -1,6 +1,9 @@
 # Django settings for restaurant project.
 import os
 
+# Sandwich Works Website
+# *** Don't forget to add your media directory *** This model makes ues of user uploaded content!
+
 # default values
 WEBSITE_NAME =  "Sandwich Works"
 COPYRIGHT_INFO = "Copyright Sandwich Works Restaurants 2013"
