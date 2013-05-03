@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="{{ meta_keywords }}" />
+    <meta name="description" content="{{ meta_description }}" />
+    <title>{% block title %}{% if page.page_title %} {{ page.page_title }} - {% endif %} {{ site_name }} {% endblock %}</title>
+    <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Kameron' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Noticia+Text' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Stoke' rel='stylesheet' type='text/css'>
+    {% load staticfiles %}
+    <link href="{% static "bootstrap/css/bootstrap.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "bootstrap/css/bootstrap-responsive.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "css/custom.css" rel="stylesheet" %}" rel="stylesheet" type="text/css">
+    <!--{% block custom_css %}{% endblock %}
+    {% block google_fonts %}{% endblock %}-->
+    <!-- HTML5 shim for IE backwards compatibility -->
+        <!-- [if lt IE 9]>
+	        <script scr="http://html5shim.googlecode.com/svn/trunk/html5.js">
+            </script>
+        <![endif] -->
+</head>
+<body>
+    {% block site_wrapper %}{% endblock %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
