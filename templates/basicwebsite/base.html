@@ -6,11 +6,7 @@
     <meta name="keywords" content="{{ meta_keywords }}" />
     <meta name="description" content="{{ meta_description }}" />
     <title>{% block title %}{% if page.page_title %} {{ page.page_title }} - {% endif %} {{ site_name }} {% endblock %}</title>
-    <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Kameron' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Noticia+Text' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Stoke' rel='stylesheet' type='text/css'>
+    {% include "tags/fonts.html" %}
     {% load staticfiles %}
     <link href="{% static "bootstrap/css/bootstrap.css" %}" rel="stylesheet" type="text/css">
     <link href="{% static "bootstrap/css/bootstrap-responsive.css" %}" rel="stylesheet" type="text/css">

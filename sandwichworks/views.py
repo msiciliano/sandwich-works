@@ -18,12 +18,12 @@ def menu_page(request, sitepage_slug, menu_body_template_name="menu_body.html", 
     get_herounit_vars(menu_page)
     menus = menu_page.menus_set.all()
         
-def get_herounit_vars(request_page):
-    page_title = request_page.page_title
-    quote_image = request_page.quote_image
-    hero_quote = request_page.hero_quote
-    main_site_image = request_page.main_site_image
-    meta_keywords = request_page.meta_keywords
-    meta_description = request_page.meta_description
-    web_design_info = request_page.web_design_info
+def get_herounit_vars(page):
+    page_title = page.page_title
+    quote_image = page.quote_image
+    hero_quote = page.hero_quote
+    main_site_image = page.main_site_image
+    meta_keywords = page.meta_keywords
+    meta_description = page.meta_description
+    web_design_info = page.web_design_info
     return locals()

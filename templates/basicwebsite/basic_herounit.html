@@ -31,7 +31,7 @@
 	   <div class="span12">  
            <ul class="nav nav-tabs">
 	       {% block navigation %}
-               {% for page in active_pages %}
+               {% for nav_page in active_pages %}
 	               {% if nav_page  %}
                        <li class="active"><a href="/">{{ nav_page.page_title }}</a></li>
                    {% else %}
