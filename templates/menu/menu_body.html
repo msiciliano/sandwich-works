@@ -1,168 +1,78 @@
+{% extends "basicwebsite/basic_herounit.html" %}
+{% block content %} 
+    <!-- BEGIN MENUS -->
     <div class="row-fluid">
-      <div class="span9 pull-left">
-        {% for menu in menus %}
-        
-        
-        
-        
-        
+      <div class="span9 pull-left text-center">
+        {% for menu in menus_on_page %}
         <div class="row-fluid">
           <div class="span12">
-              <section class="menu  text-center">
-                <header>
-                    <h1>{{ menu_title }}</h1>
-                  <h4>{{ menu_descrtiption }}</h4>
-              </header>
+            <section class="menu  text-center">
+              <header>
+                <h1>{{ menu.menu_instance.title }}</h1>
+                <h4>{{ menu.menu_instance.description }}</h4>
+              </header>     
               <ul class="unstyled">
-                    [inclued menu item tags here ]
-              </ul>  
-            </section>
-              <section class="menu  text-center">
-                <header>
-                    <h1>Omeletts</h1>
-                  <h4>You can describe the menu here.  Or list breads or whatever you want really ....</h4>
-              </header>
-              <ul class="unstyled">
-               <li>
-                 <div class="row-fluid">
-                     <div class="span3 text-center">
-                       <h3 class="menu-item">Menu Item 1</h3>
-                       <p> You can write descriptions of the food items here.  You can write descriptions of the food items here. </p>
-                     <h4 class="price">$5.95</h4>
-                                             </div>
-                     <div class="span3 text-center">
-                       <h3 class="menu-item">Menu Item 2</h3>
-                       <p> You can write descriptions of the food items here.  You can write descriptions of the food items here. </p>
-                     <h4 class="price">$5.95</h4>
-                                         </div>
-                     <div class="span3 text-center">
-                       <h3 class="menu-item">Menu Item 3</h3>
-                       <p> You can write descriptions of the food items here.  You can write descriptions of the food items here. </p>
-                     <h4 class="price">$5.95</h4>
-                                        </div>
-                    <div class="span3 text-center">
-                      <h3 class="menu-item">Menu Item 4</h3>
-                      <p> You can write descriptions of the food items here.  You can write descriptions of the food items here. </p>
-                    <h4 class="price">$5.95</h4>
-                    </div>
-                  </div>  
-                </li>
+              {% for item in menu.menu_items %} 
+                {% if forloop.first %}
                 <li>
-                <div class="row-fluid">
+                  <div class="row-fluid">
+                {% endif %}               
                     <div class="span3 text-center">
-                      <h3 class="menu-item">Menu Item 1</h3>
-                       <p> You can write descriptions of the food items here.  You can write descriptions of the food items here. </p>
-                     <h4 class="price">$5.95</h4>
-                       <img src="images/sw_square_200x199.png"  class="hidden-phone">
-                    </div>
-                    <div class="span3 text-center">
-                      <h3 class="menu-item">Menu Item 2</h3>
-                      <p> You can write descriptions of the food items here.  You can write descriptions of the food items here. </p>
-                    <h4 class="price">$5.95</h4>
-                    <img src="images/sw_square_200x199.png"  class="hidden-phone">
-                    </div>
-                    <div class="span3 text-center">
-                      <h3 class="menu-item">Menu Item 3</h3>
-                      <p> You can write descriptions of the food items here.  You can write descriptions of the food items here. </p>
-                    <h4 class="price">$5.95</h4>
-                      <img src="images/sw_square_200x199.png"  class="hidden-phone">
-                    </div>
-                    <div class="span3 text-center">
-                      <h3 class="menu-item">Menu Item 4</h3>
-                      <p> You can write descriptions of the food items here.  You can write descriptions of the food items here. </p>
-                    <h4 class="price">$5.95</h4>
-                      <img src="images/sw_square_200x199.png"  class="hidden-phone">
-                    </div>
-                  </div>
+                      <h3 class="menu-item">{{ item.name }}</h3>
+                        <p> {{ item.description }} </p>
+                        <h4 class="price">${{ item.price }}</h4>
+                {% if item.image %}
+                        <!--<img src="{{ item.image }}"  class="hidden-phone">-->
+                {% endif %}
+                    </div>   
+                {% if forloop.counter|divisibleby:4 and not forloop.first %}
+                  </div>                                  
+                </li> 
+                <li>
+                  <div class="row-fluid">    
+                {% endif %}
+                {% if forloop.last %}
+                  </div>                
                 </li>
+                {% endif %}
+              {% endfor %}   
               </ul>  
             </section>
           </div>
-        </div>
-        {% endfor %} 
-      </div>  
-    </div>  
-    <div class="span3 pull-right text-center sidebar">
-      {% for sidebar in sidebars %}
-      
-      <div class="row-fluid">
-        <div class="span12">
-          <section>
-            <header>
-              <h1>Sides</h1>
-              <h3>description of sides</h3>
-            </header>
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td><h4 class="menu-item">Menu Item 1</h4></td>
-                  <td><h4 class="price">$5.95</h4></td>
-                </tr>
-                <tr>
-                  <td><h4 class="menu-item">Menu Item 2</h4></td>
-                  <td><h4 class="price">$5.95</h4></td>
-                </tr>
-                <tr>
-                  <td><h4 class="menu-item">Menu Item 3</h4></td>
-                  <td><h4 class="price">$2.95</h4></td>
-                </tr>
-                <tr>
-                  <td><h4 class="menu-item">Menu Item 4</h4></td>
-                  <td><h4 class="price">$6.95</h4></td>
-                </tr>
-                <tr>
-                  <td><h4 class="menu-item">Menu Item 5</h4></td>
-                  <td><h4 class="price">$3.95</h4></td>
-                </tr>
-                <tr>
-                  <td><h4 class="menu-item">Menu Item 6</h4></td>
-                  <td><h4 class="price">$1.95</h4></td>
-                </tr>
-              </tbody>
-            </table>
-         </section>
-         <section>
-           <header>
-                  <h1>Sides</h1>
-                  <h3>description of sides</h3>
-            </header>
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td><h4 class="menu-item">Menu Item 1</h4></td>
-                  <td><h4 class="price">$5.95</h4></td>
-                </tr>
-                <tr>
-                  <td><h4 class="menu-item">Menu Item 2</h4></td>
-                  <td><h4 class="price">$5.95</h4></td>
-                </tr>
-                <tr>
-                  <td><h4 class="menu-item">Menu Item 3</h4></td>
-                  <td><h4 class="price">$2.95</h4></td>
-                </tr>
-                <tr>
-                  <td><h4 class="menu-item">Menu Item 4</h4></td>
-                  <td><h4 class="price">$6.95</h4></td>
-                </tr>
-                <tr>
-                  <td><h4 class="menu-item">Menu Item 5</h4></td>
-                  <td><h4 class="price">$3.95</h4></td>
-                </tr>
-                <tr>
-                  <td><h4 class="menu-item">Menu Item 6</h4></td>
-                  <td><h4 class="price">$1.95</h4></td>
-                </tr>
-              </tbody>
-            </table>
-              </section>
-            <section>
-           <header>
-             <h1>Something important to say</h1>
-              <h3>description of sometihng importatnt ... with lots of text. So the user can add different things to the sidebars</h3>
-          </header>
-        </section>
+        </div>     
+        {% endfor %}
       </div>
-    </div>
-  </div>
-  
+      <!-- BEGIN SIDEBARS -->
+      <div class="span3 pull-right text-center sidebar">
+      {% for sidebar in sidebars %}    
+        <div class="row-fluid">
+          <div class="span12">
+            <section>
+              <header>
+                <h1>{{ sidebar.menu_instance.title }}</h1>
+                <h3>{{ sidebar.menu_instance.descrtiption }}</h3>
+              </header>
+              <table class="table">
+                <tbody>
+                  {% for item in sidebar.menu_items %}  
+                  <tr>
+                    <td><h4 class="menu-item">{{ item.name }}</h4></td>
+                    <td><h4 class="price">${{ item.price }}</h4></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </section>
+          </div>
+        </div>    
+      {% endfor %}  
+       <section>
+         <header>
+           <h1>{{ menu_page.menu_page_message_title }}</h1>
+           <h3>{{ menu_page.menu_page_message }}</h3>
+         </header>
+       </section>
+     </div>
+   </div>  
+{% endblock %}  
  

@@ -8,13 +8,16 @@ import os
 WEBSITE_NAME =  "Sandwich Works"
 COPYRIGHT_INFO = "Copyright Sandwich Works Restaurants 2013"
 META_KEYWORDS = "breakfast, lunch, dinner, catering, fresh, friendly, fast, boston, newton, juices, sandwiches, cheap, inexpensive"
-META_DESCRIPTION = "Sandwich Works is a reasturant and caterer in the Boston area.  Home of Fresh, Friendly, and Fast and Whatever Works for You"
+META_DESCRIPTION = "Sandwich Works is a reasturant and caterer in the Boston area.  Home of Fresh, Friendly, and Fast and Whatever Works for You!"
 WEB_DESIGN_INFO = "Web Design by Michael Siciliano"
 INDEX_TITLE = "Home"
 PHONE_NUMBER = "(617) 332-6777"
 STREET_ADDRESS = "827 Beacon Street"
 CITY_AND_STATE = "Newton, MA 02459"
 EMAIL = "sandwichworks@gmail.com"
+MENU_WIDTH = 4
+# this is the number of items a menu can hold
+MENU_ITEM_LIMIT = 42
 
 ADMINS = (
     ('Michael Siciliano', 'cafed00d.2321@gmail.com'),
@@ -143,7 +146,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'menu',
+    'menus',
     'utils',
     'basicwebsite',
     'sandwichworks',
