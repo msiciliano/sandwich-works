@@ -9,7 +9,7 @@
             <section class="menu  text-center">
               <header>
                 <h1>{{ menu.menu_instance.title }}</h1>
-                <h4>{{ menu.menu_instance.description }}</h4>
+                <h4 class="hidden-phone">{{ menu.menu_instance.description }}</h4>
               </header>     
               <ul class="unstyled">
               {% for item in menu.menu_items %} 
@@ -19,7 +19,7 @@
                 {% endif %}               
                     <div class="span3 text-center">
                       <h3 class="menu-item">{{ item.name }}</h3>
-                        <p> {{ item.description }} </p>
+                        <p class="hidden-phone"> {{ item.description }} </p>
                         <h4 class="price">${{ item.price }}</h4>
                 {% if item.image %}
                         <!--<img src="{{ item.image }}"  class="hidden-phone">-->
@@ -68,8 +68,8 @@
       {% endfor %}  
        <section>
          <header>
-           <h1>{{ menu_page.menu_page_message_title }}</h1>
-           <h3>{{ menu_page.menu_page_message }}</h3>
+           <h1 class="hidden-phone">{{ menu_page.menu_page_message_title }}</h1>
+           <h3 class="hidden-phone">{{ menu_page.menu_page_message }}</h3>
          </header>
        </section>
      </div>
