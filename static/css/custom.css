@@ -37,6 +37,9 @@
   padding:            10px 20px 20px 20px;
   background-color:   #C9B89D;  /*#FFFCEE   #FFFAEA; */
   color:              #FFFCEE;
+  -moz-border-radius: 25px 10px / 10px 25px;
+  border-radius:      25px 10px / 10px 25px;
+  box-shadow:         10px 10px 10px #888888;
 }
 
 .menu-row {
