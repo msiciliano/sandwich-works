@@ -39,6 +39,11 @@
   color:              #FFFCEE;
 }
 
+.menu-row {
+    border-top:       groove 3px white;
+    margin-top:       10px;
+}
+
 .menu h1 {
   color:              #454E6F;
   font-family:        'Trade Winds', Times, Serif;

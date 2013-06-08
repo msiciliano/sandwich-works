@@ -6,7 +6,7 @@
         {% for menu in menus_on_page %}
         <div class="row-fluid">
           <div class="span12">
-            <section class="menu  text-center">
+            <section class="menu text-center">
               <header>
                 <h1>{{ menu.menu_instance.title }}</h1>
                 <h4 class="hidden-phone">{{ menu.menu_instance.description }}</h4>
@@ -18,17 +18,17 @@
                   <div class="row-fluid">
                 {% endif %}               
                     <div class="span3 text-center">
-                      <h3 class="menu-item">{{ item.name }}</h3>
+                      <h4 class="menu-item">{{ item.name }}</h4>
                         <p class="hidden-phone"> {{ item.description }} </p>
                         <h4 class="price">${{ item.price }}</h4>
                 {% if item.image %}
-                        <!--<img src="{{ item.image }}"  class="hidden-phone">-->
+                        <img src="{{ MEDIA_URL }}{{item.image }}"  class="hidden-phone">
                 {% endif %}
                     </div>   
                 {% if forloop.counter|divisibleby:4 and not forloop.first %}
                   </div>                                  
                 </li> 
-                <li>
+                <li class="menu-row">
                   <div class="row-fluid">    
                 {% endif %}
                 {% if forloop.last %}
