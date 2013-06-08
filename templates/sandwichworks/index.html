@@ -7,13 +7,13 @@
             <div id="indexCarousel" class="carousel slide">
                 <ol class="carousel-indicators">
                 {% for item in carousel_items %}
-                    <li data-target="#indexCarousel" data-slide-to="{{ item.order_of_apperance }}" {% if item.order_of_apperance == 1 %} class="active" {% endif %}></li>
+                    <li data-target="#indexCarousel" data-slide-to="{{ item.order_of_apperance }}" {% if forloop.first %} class="active" {% endif %}></li>
                 {% endfor %}   
                 </ol>
                 <!-- Carousel items -->   
                 <div id="carousel-items" class="carousel-inner text-center">
                 {% for item in carousel_items %}
-                    <div {% if item.order_of_apperance == 1 %} class="active item" {% else %} class="item" {% endif %}>
+                    <div {% if forloop.first %} class="active item" {% else %} class="item" {% endif %}>
                         <img src="media/{{ item.image }}" />
                         <h3>{{ item.display_name }}</h3>
                     </div>
