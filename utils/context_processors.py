@@ -1,6 +1,6 @@
 from django.conf import settings
 import sandwichworks
-from sandwichworks.models import IndexPage, MenuPage
+from sandwichworks.models import IndexPage, MenuPage, PlainPage
 
 def sandwichworks(request):
     
@@ -9,6 +9,9 @@ def sandwichworks(request):
         active_pages.append(x)
     
     for x in MenuPage.objects.filter(is_active=True):
+        active_pages.append(x)
+    
+    for x in PlainPage.objects.filter(is_active=True):
         active_pages.append(x)
     
     return {

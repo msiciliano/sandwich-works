@@ -4,7 +4,7 @@ from django.template import RequestContext
 from django.db.models.fields.related import ReverseManyRelatedObjectsDescriptor
 from django.db.models.query import QuerySet
 from menus.models import Menu, MenuItem
-from sandwichworks.models import IndexPage, MenuPage, CarouselItem, HourOfOperation
+from sandwichworks.models import IndexPage, MenuPage, PlainPage, CarouselItem, HourOfOperation, PlainPageContent
 
 def show_index_page(request, template_name="sandwichworks/index.html"):
     index_page = get_object_or_404(IndexPage, page_title=settings.INDEX_TITLE)
@@ -29,6 +29,13 @@ def show_menu_page(request, menu_slug, template_name="menu/menu_body.html"):
             menu_size.append(i)
     
     return render_to_response(template_name, locals(), context_instance=RequestContext(request))
+        
+def show_plain_page(request, plain_slug, template_name="sandwichworks/plain_page.html"):
+    plain_page = get_object_or_404(PlainPage, slug=plain_slug)
+    page = get_herounit_vars(plain_page)
+    contents = add_contents(plain_page.contents.all())
+    
+    return render_to_response(template_name, locals(), context_instance=RequestContext(request))        
         
 def get_herounit_vars(page):
     page_title = page.page_title
@@ -56,5 +63,21 @@ def add_menus(menu_list):
         else: 
             raise RuntimeError("Method only supports Menu lists")
         
-    return menus    
+    return menus 
+
+def add_contents(content_list):
+    if not isinstance(content_list, QuerySet):
+        raise RunTimeError("Unable to add contents from Object %s" % type(contents))
+    
+    contents = []
+    for content_instance in content_list:
+        if isinstance(content_instance, PlainPageContent):
+            contents.append({'title': content_instance.title, 'content': content_instance.content.read(), 'image': content_instance.image})    
+                
+        else:
+            raise RuntimeError("Method only supports PlainPageContent lists")    
+        
+    return contents
+     
+    
         

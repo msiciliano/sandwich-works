@@ -14,7 +14,7 @@
                 <div id="carousel-items" class="carousel-inner text-center">
                 {% for item in carousel_items %}
                     <div {% if forloop.first %} class="active item" {% else %} class="item" {% endif %}>
-                        <img src="media/{{ item.image }}" />
+                        <img src="{{ MEDIA_URL }}{{ item.image }}" />
                         <h3>{{ item.display_name }}</h3>
                     </div>
                 {% endfor %}

@@ -7,12 +7,12 @@ from menus.models import Menu
 # -*- coding: latin-1 -*-
     
 class CarouselItem(ImageItem):
-    image = models.ImageField(upload_to='carousel', null=False)
+    image = models.ImageField(upload_to='carousel', null=False, help_text='Images are NOT OPTIONAL for the carousel!')
     display_name = models.CharField(max_length=255, help_text='The text to be displayed under the image for this carosel Item', null=False)
-    order_of_apperance = models.IntegerField(help_text='The order this day should appear in the list', null=False, default=1)
+    order_of_appearance = models.IntegerField(help_text='The order this day should appear in the list', null=False, default=1)
     
     class Meta:
-        ordering = ['order_of_apperance'] 
+        ordering = ['order_of_appearance'] 
     
     def __unicode__(self):
         if not self.display_name:
@@ -21,12 +21,12 @@ class CarouselItem(ImageItem):
             return u'%s' % self.display_name   
     
 class HourOfOperation(models.Model):
-    day_of_week = models.CharField(max_length=10, help_text='The the day of the week', null=False)
-    order_of_apperance = models.IntegerField(help_text='The order this day should appear in the list', null=False)
+    day_of_week = models.CharField(max_length=30, help_text='The the day of the week', null=False)
+    order_of_appearance = models.IntegerField(help_text='The order this day should appear in the list', null=False)
     hours_open = models.CharField(max_length=20, help_text='The hours the store is open for this day', null=False)
     
     class Meta:
-        ordering = ['order_of_apperance']  
+        ordering = ['order_of_appearance']  
         
     def __unicode__(self):
         if not self.day_of_week:
@@ -59,4 +59,22 @@ class MenuPage(HeroAndFooterPage):
 
     def get_absolute_url(self):
         return reverse('menu_view', kwargs={'menu_slug': self.slug})  
+
+class PlainPageContent(ImageItem):
+    order_of_appearance = models.IntegerField(help_text='The order that this content should appear on the page')
+    title = models.CharField(max_length=100, help_text='The title of the this section of information')
+    content = models.FileField(upload_to="info_files")
+    image = models.ImageField(upload_to='info_pics', blank=True, null=True) 
+    
+    def __unicode__(self):
+        if not self.title:
+            return u'Unknown Info'
+        else:
+            return u'%s' % self.title
+    
+class PlainPage(HeroAndFooterPage):
+        contents = models.ManyToManyField(PlainPageContent, help_text='The contents of this page')
+        
+        def get_absolute_url(self):
+            return reverse('plain_view', kwargs={'plain_slug': self.slug})
     

@@ -34,7 +34,7 @@
            <ul class="nav nav-tabs">
 	       {% block navigation %}
                {% for nav_page in active_pages %}
-                    <li {% ifequal page.page_title nav_page.page_title %} class="active" {% endifequal %} ><a href="{{ nav_page.get_absolute_url }}">{{ nav_page.page_title }}</a></li>
+                     <li {% ifequal page.page_title nav_page.page_title %} class="active" {% endifequal %} ><a href="{{ nav_page.get_absolute_url }}">{{ nav_page.page_title }} {{ page.title }}</a> {{ page.title }}</li> 
                {% empty %}
                    <li class="active"><a href="/">HOME</a></li>
                {% endfor %}

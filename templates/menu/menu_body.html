@@ -22,7 +22,7 @@
                         <p class="hidden-phone"> {{ item.description }} </p>
                         <h4 class="price">${{ item.price }}</h4>
                 {% if item.image %}
-                        <img src="{{ MEDIA_URL }}{{item.image }}"  class="visible-desktop">
+                        <img class="visible-desktop" src="{{ MEDIA_URL }}{{ item.image }}" >
                 {% endif %}
                     </div>   
                 {% if forloop.counter|divisibleby:4 and not forloop.first %}

@@ -1,0 +1,23 @@
+{% extends "basicwebsite/basic_herounit.html" %}
+{% block content %}
+    <!-- CAROUSEL -->
+    <div class="row-fluid">
+      <div class="span12 text-center sidebar">
+      {% for content in contents %} 
+        <br />   
+        <h1>{{ content.title }}</h1> 
+         <br />
+        <p>{{ content.content }}</p>
+        {% if content.image %}
+        <br />
+        <img class="hidden-phone" src="{{ MEDIA_URL }}{{ content.image }}" 
+             title="{{ content.image.image_title }}" 
+             alt="{{ content.image.image_alt }}" />
+        {% endif %}
+        <br />
+        <br />
+        <div class="content-separator"></div>
+      {% endfor %}
+      </div>
+    </div>     
+{% endblock %}    

@@ -13,84 +13,91 @@
       feel of a menu, so we do not want it to 
       be completely responsive.  
   */
-  max-width:          1200px;
-  margin-right:       auto;
-  margin-left:        auto;
-  color:              #896475;
+  max-width:            1200px;
+  margin-right:         auto;
+  margin-left:          auto;
+  color:                #896475;
 }
 
 /* HERO UNIT */
 .hero-unit {
-  background-color:   #454E6F;  /*#FFFCEE   #FFFAEA; #6C566F */
-  color:              #FFFAEA;
-  padding-bottom:     15px;
+  background-color:     #454E6F;  /*#FFFCEE   #FFFAEA; #6C566F */
+  color:                #FFFAEA;
+  padding-bottom:       15px;
 }
 
 #hero-quote {
-  margin-top:         30px;
-  font-family:        'Rock Salt', cursive;
+  margin-top:           30px;
+  font-family:          'Rock Salt', cursive;
 }
 
 /* MENUS */
 .menu { 
-  margin:             0px 5px 15px 0px;
-  padding:            10px 20px 20px 20px;
-  background-color:   #C9B89D;  /*#FFFCEE   #FFFAEA; */
-  color:              #FFFCEE;
-  -moz-border-radius: 25px 10px / 10px 25px;
-  border-radius:      25px 10px / 10px 25px;
-  box-shadow:         10px 10px 10px #888888;
+  margin:               0px 5px 15px 0px;
+  padding:              10px 20px 20px 20px;
+  background-color:     #C9B89D;  /*#FFFCEE   #FFFAEA; */
+  color:                #FFFCEE;
+  -moz-border-radius:   25px 10px / 10px 25px;
+  border-radius:        25px 10px / 10px 25px;
+  box-shadow:           10px 10px 10px #888888;
 }
-
+                        
 .menu-row {
-    border-top:       groove 2px white;
-    margin-top:       10px;
+    border-top:         groove 2px white;
+    margin-top:         10px;
 }
 
 .menu h1 {
-  color:              #454E6F;
-  font-family:        'Trade Winds', Times, Serif;
+  color:                #454E6F;
+  font-family:          'Trade Winds', Times, Serif;
 }
 
 .menu-item, .price {
-  color:              #6C566F;
-  font-family:        'Stoke', Times, Serif;
+  color:                #6C566F;
+  font-family:          'Stoke', Times, Serif;
 }
 
 /* SIDEBARS */
 .sidebar {  
-  padding:            5px;
-  color:              #763C2D;
+  padding:              5px;
+  color:                #763C2D;
  
 }
 
 .sidebar h1 {  
-  font-family:        'Noticia Text', Times, Serif;
+  font-family:          'Noticia Text', Times, Serif;
  
 }
 
-.sidebar h4 {
-  font-family:        'Kameron', Times, Serif;
+.sidebar h4, .sidebar p {
+  font-family:          'Kameron', Times, Serif;
 }
  
  
 #carousel-caption {
-  padding:            10px;
-  color:              #454E6F;
-  font-family:        'Rock Salt', cursive;
+  padding:              10px;
+  color:                #454E6F;
+  font-family:          'Rock Salt', cursive;
 }
 
 
 #contact {
-  margin:             20px 20px 0px 20px;
+  margin:               20px 20px 0px 20px;
 }
 
 #contact h1, #contact h2, #contact h4, #contact>p {
-  padding:             40px 0px 0pc 0px;
+  padding:              40px 0px 0pc 0px;
+}
+
+.content-separator {
+    padding:            2px;
+    background-color:   #C9B89D;
+    border-radius:      25px 10px / 10px 25px;
+    box-shadow:         5px 5px 5px #888888;
 }
 
 footer {
-  margin:             20px;
+  margin:               20px;
 }
 
 
