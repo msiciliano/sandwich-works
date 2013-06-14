@@ -63,8 +63,8 @@ class MenuPage(HeroAndFooterPage):
 class PlainPageContent(ImageItem):
     order_of_appearance = models.IntegerField(help_text='The order that this content should appear on the page')
     title = models.CharField(max_length=100, help_text='The title of the this section of information')
-    content = models.FileField(upload_to="info_files")
-    image = models.ImageField(upload_to='info_pics', blank=True, null=True) 
+    content = models.FileField(upload_to="info_files", help_text='This is a TEXT FILE (like about-us.txt) located on your computer.  You edit the file with what you want to say and then upload it here.  The contents will be displayed. You can use notepad.exe to create text files')
+    image = models.ImageField(upload_to='info_pics', blank=True, null=True, help_text='This is an OPTIONAL picture to show with the above entry') 
     
     def __unicode__(self):
         if not self.title:
