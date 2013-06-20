@@ -70,7 +70,7 @@ class PlainPageAdmin(admin.ModelAdmin):
     list_per_page = 10
     ordering = ['order_of_appearance']
     prepopulated_fields = {'slug': ('page_title', )}
-    fields = ('title', 'content', 'image', 'image_title', 'image_alt', 'order_of_appearance',)
+    fields = ('page_title', 'content', 'image', 'image_title', 'image_alt', 'order_of_appearance',)
     
 admin.site.register(PlainPage, PlainPageAdmin) 
 
