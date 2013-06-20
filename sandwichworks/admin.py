@@ -70,14 +70,15 @@ class PlainPageAdmin(admin.ModelAdmin):
     list_per_page = 10
     ordering = ['order_of_appearance']
     prepopulated_fields = {'slug': ('page_title', )}
-    fields = ('page_title', 'content', 'image', 'image_title', 'image_alt', 'order_of_appearance',)
-    
+    fields = ('page_title', 'slug', 'meta_keywords', 'meta_description', 'order_of_appearance', 'is_active', 'quote_image', 'hero_quote',  'main_page_image', 'contents',)
+    filter_horizontal = ('contents',)
+
 admin.site.register(PlainPage, PlainPageAdmin) 
 
 class PlainPageContentAdmin(admin.ModelAdmin):
     list_display = ('title', 'order_of_appearance', 'image' )
     list_per_page = 25
     ordering = ['order_of_appearance']
-    filter_horizontal = ('contents',)
-    
+    fields = ('title', 'content', 'image', 'image_title', 'image_alt', 'order_of_appearance',)
+
 admin.site.register(PlainPageContent, PlainPageContentAdmin)      
