@@ -41,10 +41,10 @@ class IndexPage(HeroAndFooterPage):
     email = models.CharField(max_length=100, blank=True)
     order_of_appearance = -1
     carousel_caption = models.CharField(max_length=255, blank=True, help_text='The text to be displayed over the Carousel')
-    hours_description = models.CharField(max_length=255, blank=True, help_text='The caption to display with the hours of operation. Like: Memorial Day Hours')   
+    hours_description = models.CharField(max_length=255, help_text='The caption to display with the hours of operation. Like: Memorial Day Hours')   
     index_message = models.CharField(max_length=255, blank=True, help_text='This is any additional text you want to be seen under the email button')
-    carousel_items = models.ManyToManyField(CarouselItem)
-    hours_of_operation = models.ManyToManyField(HourOfOperation)
+    carousel_items = models.ManyToManyField(CarouselItem, help_text='You can pick which ever carousel items you want here to make them active. This way you can have a bunch in the database, but only select a few at a time to have on the page -- ')
+    hours_of_operation = models.ManyToManyField(HourOfOperation, help_text='You can pick which ever days you want here to make them active. This way you can have a \"Memorial Day\" and pick when to make it active on the main page -- ')
     is_active = True
     
     def get_absolute_url(self):
@@ -55,7 +55,7 @@ class MenuPage(HeroAndFooterPage):
     menu_page_message_title = models.CharField(max_length=100, blank=True, help_text='OPTIONAL: The TITLE to be displayed OVER the message displayed at the bottom of the list of sidebars (if any)')
     menu_page_message = models.CharField(max_length=255, blank=True, help_text='OPTIONAL: The message TEXT to be displayed as a message at the bottom of the list of sidebars (if any)')
     menus_on_page = models.ManyToManyField(Menu, help_text='The specific menus with to be listed in this page')
-    sidebars = models.ManyToManyField(Menu, blank=True, null=True, help_text='OPTIONAL: The specific sidebar menus with items to be listed in this page. These will not show pictures.', related_name="%(app_label)s_%(class)s_related")
+    sidebars = models.ManyToManyField(Menu, blank=True, null=True, help_text='OPTIONAL: The specific sidebar menus with items to be listed in this page. These will not show pictures or descriptions.', related_name="%(app_label)s_%(class)s_related")
 
     def get_absolute_url(self):
         return reverse('menu_view', kwargs={'menu_slug': self.slug})  

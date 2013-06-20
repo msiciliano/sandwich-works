@@ -14,7 +14,7 @@ class MenuItem(ImageItem):
         if not self.name:
             return  u'Unknown Item'
         else:
-            return u'%s%s%s' % (self.name, " $", self.price)
+            return u'%s Price(%s%s) Order(%s)' % (self.name, "$", self.price, self.order_number)
     
     class Meta:
         ordering = ['order_number', 'name', 'price'] 
