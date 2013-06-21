@@ -7,10 +7,9 @@
     <meta name="description" content="{{ meta_description }}" />
     <title>{% block title %}{% if page.page_title %}{{ page.page_title }} - {% endif %}{{ site_name }}{% endblock %}</title>
     {% include "tags/fonts.html" %}
-    {% load staticfiles %}
-    <link href="{% static "bootstrap/css/bootstrap.css" %}" rel="stylesheet" type="text/css">
-    <link href="{% static "bootstrap/css/bootstrap-responsive.css" %}" rel="stylesheet" type="text/css">
-    <link href="{% static "css/custom.css" rel="stylesheet" %}" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}css/custom.css" rel="stylesheet" rel="stylesheet" type="text/css">
     <!--{% block custom_css %}{% endblock %}
     {% block google_fonts %}{% endblock %}-->
     <!-- HTML5 shim for IE backwards compatibility -->
@@ -22,7 +21,7 @@
 <body>
     {% block site_wrapper %}{% endblock %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
-    <script src="{% static "js/sw_main.js" %}"></script>   
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{STATIC_URL}}js/sw_main.js"></script>   
 </body>
 </html>
