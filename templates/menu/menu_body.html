@@ -20,7 +20,9 @@
                     <div class="span3 text-center">
                       <h4 class="menu-item">{{ item.name }}</h4>
                         <p class="hidden-phone"> {{ item.description }} </p>
-                        <h4 class="price">${{ item.price }}</h4>
+                {% if item.price %}        
+			<h4 class="price">${{ item.price }}</h4>
+		{% endif %}	
                 {% if item.image %}
                         <img class="visible-desktop" src="{{ MEDIA_URL }}{{ item.image }}" >
                 {% endif %}
@@ -57,7 +59,9 @@
                   {% for item in sidebar.menu_items %}  
                   <tr>
                     <td><h4 class="menu-item">{{ item.name }}</h4></td>
+		    {% if item.price %}
                     <td><h4 class="price">${{ item.price }}</h4></td>
+		    {% endif %}
                   </tr>
                   {% endfor %}
                 </tbody>

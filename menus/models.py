@@ -6,7 +6,7 @@ from basicwebsite.models import ImageItem
 class MenuItem(ImageItem):
     name = models.CharField(max_length=50, blank=True, help_text='The name of this menu item. Like: Turkey Sandwich')
     description = models.CharField(max_length=255, blank=True, help_text='A brief description that will appear under the name. Like: Our lean oven roasted Turkey, on your choice of bread ...' )
-    price = models.DecimalField(max_digits=5, decimal_places=2, null=True)
+    price = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
     image = image = models.ImageField(upload_to='food_items', blank=True, null=True, help_text='Images are OPTIONAL for food items')
     order_number = models.IntegerField(help_text='Order this menu item will appear in a menu.  This can probably be re-done at some point to make it less confusing. SUGGESTION: use prefixes to your numbers to identify catagories (like 100 for breakfast, and 200 for lunch items), then you can number the items incrementally: 101, 102, etc ... ')
     
